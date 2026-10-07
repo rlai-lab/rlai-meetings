@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RLAI Seminar Talks</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body {
+      max-width: 720px;
+      margin: 40px auto;
+      padding: 0 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      color: #222;
+      background: #fff;
+    }
+    .topic { border-top: 1px solid #ddd; padding: 20px 0; }
+    .topic h2 { font-size: 1.25em; margin: 0; }
+    summary { cursor: pointer; color: #444; margin-top: 6px; }
+    .abstract { white-space: pre-line; margin: 8px 0 0; }
+    .session { margin-top: 12px; }
+    .session h3 { font-size: 1em; margin: 0; }
+    .session .date { color: #666; font-weight: normal; }
+    .session ul { margin: 4px 0 0; padding-left: 20px; }
+    .session li { margin: 4px 0; }
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid #ccc;
+      transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+    }
+    a:hover { color: #6b5fb5; border-color: #6b5fb5; }
+    a.slides:hover { background: #f1effa; }
+    .slides {
+      font-size: 0.8em;
+      margin-left: 8px;
+      padding: 1px 8px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      color: #444;
+    }
+    .slides.soon { color: #999; border-style: dashed; }
+  </style>
+</head>
+<body>
+  <h1>RLAI Seminar Talks</h1>
+
+  <div id="topics"></div>
+
+  <script>
+    const list = document.getElementById("topics");
+    const firstDate = t => t.meetings.map(m => m.date).sort()[0] || "";
+
+    fetch("meetings.json")
+      .then(r => r.json())
+      .then(render)
+      .catch(err => {
+        list.textContent = "Could not load meetings.json: " + err.message;
+      });
+
+    const formatDate = d => new Date(d + "T00:00:00").toLocaleDateString("en-US", {
+      weekday: "short", year: "numeric", month: "long", day: "numeric",
+    });
+
+    function render(topics) {
+      const sorted = [...topics].sort((a, b) => firstDate(b).localeCompare(firstDate(a)));
+      for (const t of sorted) {
+        const div = document.createElement("div");
+        div.className = "topic";
+
+        const title = document.createElement("h2");
+        title.textContent = t.title;
+        div.appendChild(title);
+
+        if (t.abstract) {
+          const details = document.createElement("details");
+          const summary = document.createElement("summary");
+          summary.textContent = "Abstract";
+          const p = document.createElement("p");
+          p.className = "abstract";
+          p.textContent = t.abstract;
+          details.append(summary, p);
+          div.appendChild(details);
+        }
+
+        const meetingsInOrder = [...t.meetings].sort((a, b) => a.date.localeCompare(b.date));
+        meetingsInOrder.forEach((m, i) => {
+          const session = document.createElement("div");
+          session.className = "session";
+
+          const h3 = document.createElement("h3");
+          h3.textContent = `Meeting ${i + 1} `;
+          const date = document.createElement("span");
+          date.className = "date";
+          date.textContent = "· " + formatDate(m.date);
+          h3.appendChild(date);
+          session.appendChild(h3);
+
+          if (m.speakers && m.speakers.length) {
+            const ul = document.createElement("ul");
+            for (const s of m.speakers) {
+              const li = document.createElement("li");
+              if (s.website) {
+                const name = document.createElement("a");
+                name.href = s.website;
+                name.textContent = s.name;
+                li.appendChild(name);
+              } else {
+                li.textContent = s.name;
+              }
+              const slides = document.createElement(s.slides ? "a" : "span");
+              slides.className = s.slides ? "slides" : "slides soon";
+              slides.textContent = s.slides ? "Slides" : "Slides coming soon";
+              if (s.slides) slides.href = s.slides;
+              li.appendChild(slides);
+              ul.appendChild(li);
+            }
+            session.appendChild(ul);
+          }
+
+          div.appendChild(session);
+        });
+
+        list.appendChild(div);
+      }
+    }
+  </script>
+</body>
+</html>
