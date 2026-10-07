@@ -1,0 +1,21 @@
+[
+  {
+    "title": "Long-term and short-term memory in RL agents",
+    "abstract": "",
+    "meetings": [
+      {
+        "date": "2026-10-09",
+        "speakers": [
+          { "name": "Onno Eberhand", "website": "https://onnoeberhard.com", "slides": "" },
+          { "name": "Edan Meyer", "website": "https://www.edanmeyer.com", "slides": "" }
+        ]
+      },
+      {
+        "date": "2026-10-23",
+        "speakers": [
+          { "name": "Csaba Szepesvári", "website": "https://sites.ualberta.ca/~szepesva/", "slides": "" }
+        ]
+      }
+    ]
+  }
+]
