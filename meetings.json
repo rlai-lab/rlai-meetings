@@ -6,14 +6,14 @@
       {
         "date": "2026-10-09",
         "speakers": [
-          { "name": "Onno Eberhard", "website": "https://onnoeberhard.com", "slides": "" },
-          { "name": "Edan Meyer", "website": "https://www.edanmeyer.com", "slides": "" }
+          { "name": "Onno Eberhard", "website": "https://onnoeberhard.com", "slides": "", "notes": "" },
+          { "name": "Edan Meyer", "website": "https://www.edanmeyer.com", "slides": "", "notes": "" }
         ]
       },
       {
         "date": "2026-10-23",
         "speakers": [
-          { "name": "Csaba Szepesvári", "website": "https://sites.ualberta.ca/~szepesva/", "slides": "" }
+          { "name": "Csaba Szepesvári", "website": "https://sites.ualberta.ca/~szepesva/", "slides": "", "notes": "" }
         ]
       }
     ]
