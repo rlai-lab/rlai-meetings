@@ -1,7 +1,7 @@
 [
   {
     "title": "Long-term and short-term memory in RL agents",
-    "abstract": "",
+    "abstract": "We discuss how an RL agent should manage its memory when operating in a continual RL setting. (By memory, we essentially mean the collection of various objects that an agent might maintain; see the thread for details.) For instance, one way of dealing with memory in continual RL is to maintain long-term and short-term memory components, e.g.\n\n• Long-term memory: replay buffers, environment models, slowly changing network weights (e.g. permanent networks in some continual RL work)\n• Short-term memory: an RNN's hidden state, recent history of the agent, fast changing network weights (e.g. transient networks in some continual RL work)",
     "meetings": [
       {
         "date": "2026-10-09",
