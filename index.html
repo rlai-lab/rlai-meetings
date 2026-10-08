@@ -15,10 +15,14 @@
       color: #222;
       background: #fff;
     }
+    header { display: flex; align-items: center; gap: 12px; }
+    header img { width: 44px; height: 44px; border-radius: 6px; }
     .topic { border-top: 1px solid #ddd; padding: 20px 0; }
     .topic h2 { font-size: 1.25em; margin: 0; }
     summary { cursor: pointer; color: #444; margin-top: 6px; }
-    .abstract { white-space: pre-line; margin: 8px 0 0; }
+    .abstract { margin: 8px 0 0; }
+    .abstract p { margin: 0 0 10px; }
+    .abstract ul { margin: 0 0 10px; padding-left: 20px; }
     .session { margin-top: 12px; }
     .session h3 { font-size: 1em; margin: 0; }
     .session .date { color: #666; font-weight: normal; }
@@ -44,7 +48,10 @@
   </style>
 </head>
 <body>
-  <h1>RLAI Seminar Talks</h1>
+  <header>
+    <img src="favicon.png" alt="RLAI logo">
+    <h1>RLAI Seminar Talks</h1>
+  </header>
 
   <div id="topics"></div>
 
@@ -62,6 +69,30 @@
     const formatDate = d => new Date(d + "T00:00:00").toLocaleDateString("en-US", {
       weekday: "short", year: "numeric", month: "long", day: "numeric",
     });
+    
+    function renderAbstract(text) {
+      const box = document.createElement("div");
+      box.className = "abstract";
+      let ul = null;
+      for (const raw of text.split("\n")) {
+        const line = raw.trim();
+        const bullet = line.match(/^[-•]\s+(.*)/);
+        if (bullet) {
+          if (!ul) ul = box.appendChild(document.createElement("ul"));
+          ul.appendChild(document.createElement("li")).textContent = bullet[1];
+          continue;
+        }
+        ul = null;
+        if (!line) continue;
+        const p = box.appendChild(document.createElement("p"));
+        if (line.endsWith(":") && line.length < 40) {
+          p.appendChild(document.createElement("strong")).textContent = line;
+        } else {
+          p.textContent = line;
+        }
+      }
+      return box;
+    }
 
     function render(topics) {
       const sorted = [...topics].sort((a, b) => firstDate(b).localeCompare(firstDate(a)));
@@ -77,10 +108,7 @@
           const details = document.createElement("details");
           const summary = document.createElement("summary");
           summary.textContent = "Abstract";
-          const p = document.createElement("p");
-          p.className = "abstract";
-          p.textContent = t.abstract;
-          details.append(summary, p);
+          details.append(summary, renderAbstract(t.abstract));
           div.appendChild(details);
         }
 
