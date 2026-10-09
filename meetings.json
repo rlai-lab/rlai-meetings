@@ -6,7 +6,7 @@
       {
         "date": "2026-10-09",
         "speakers": [
-          { "name": "Onno Eberhard", "website": "https://onnoeberhard.com", "slides": "", "notes": "" },
+          { "name": "Onno Eberhard", "website": "https://onnoeberhard.com", "slides": "slides/onno.pdf", "notes": "" },
           { "name": "Edan Meyer", "website": "https://www.edanmeyer.com", "slides": "", "notes": "" }
         ]
       },
