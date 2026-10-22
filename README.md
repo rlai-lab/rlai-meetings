@@ -4,6 +4,7 @@
 
 Edit [meetings.json](meetings.json) and add an entry to the list there.
 Leave `abstract` / `slides` / `notes` as `""` until you have them (empty ones are hidden). Topics are shown newest first.
+Set a speaker's `talk` to their talk title, or leave it as `""`.
 Set a speaker's `website` (e.g. `"https://example.com"`) to make their name a link, or leave it as `""`.
 
 ## Adding slides or notes

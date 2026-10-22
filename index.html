@@ -28,6 +28,7 @@
     .session .date { color: #666; font-weight: normal; }
     .session ul { margin: 4px 0 0; padding-left: 20px; }
     .session li { margin: 4px 0; }
+    .talk { font-style: italic; color: #444; }
     a {
       color: inherit;
       text-decoration: none;
@@ -135,6 +136,12 @@
                 li.appendChild(name);
               } else {
                 li.textContent = s.name;
+              }
+              if (s.talk) {
+                const talk = document.createElement("span");
+                talk.className = "talk";
+                talk.textContent = s.talk;
+                li.append(" — ", talk);
               }
               for (const [key, text] of [["slides", "Slides"], ["notes", "Notes"]]) {
                 if (!s[key]) continue;

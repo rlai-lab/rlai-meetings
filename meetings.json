@@ -6,14 +6,15 @@
       {
         "date": "2026-10-09",
         "speakers": [
-          { "name": "Onno Eberhard", "website": "https://onnoeberhard.com", "slides": "slides/onno.pdf", "notes": "" },
-          { "name": "Edan Meyer", "website": "https://www.edanmeyer.com", "slides": "", "notes": "" }
+          { "name": "Onno Eberhard", "talk": "Partially Observable RL with Memory Traces", "website": "https://onnoeberhard.com", "slides": "slides/onno.pdf", "notes": "" },
+          { "name": "Edan Meyer", "talk": "Why Can't Weights Learn Like Context?", "website": "https://www.edanmeyer.com", "slides": "", "notes": "" }
         ]
       },
       {
         "date": "2026-10-23",
         "speakers": [
-          { "name": "Csaba Szepesvári", "website": "https://sites.ualberta.ca/~szepesva/", "slides": "", "notes": "" }
+          { "name": "Shivam Garg", "talk": "Constructing states from observations for the real-world", "website": "https://svmgrg.github.io", "slides": "", "notes": "" },
+          { "name": "Csaba Szepesvári", "talk": "How Long Should an RL Agent Remember? Continuation Regret and Memory Timescales", "website": "https://sites.ualberta.ca/~szepesva/", "slides": "", "notes": "" }
         ]
       }
     ]
