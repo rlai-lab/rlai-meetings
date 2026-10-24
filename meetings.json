@@ -13,8 +13,8 @@
       {
         "date": "2026-10-23",
         "speakers": [
-          { "name": "Shivam Garg", "talk": "Constructing states from observations for the real-world", "website": "https://svmgrg.github.io", "slides": "", "notes": "" },
-          { "name": "Csaba Szepesvári", "talk": "How Long Should an RL Agent Remember? Continuation Regret and Memory Timescales", "website": "https://sites.ualberta.ca/~szepesva/", "slides": "", "notes": "" }
+          { "name": "Shivam Garg", "talk": "Constructing states from observations for the real-world", "website": "https://svmgrg.github.io", "slides": "slides/shivam.pdf", "notes": "" },
+          { "name": "Csaba Szepesvári", "talk": "How Long Should an RL Agent Remember? Continuation Regret and Memory Timescales", "website": "https://sites.ualberta.ca/~szepesva/", "slides": "slides/csaba.pdf", "notes": "" }
         ]
       }
     ]
