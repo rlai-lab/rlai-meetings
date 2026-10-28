@@ -57,7 +57,8 @@
 
   <script>
     const list = document.getElementById("topics");
-    const firstDate = t => t.meetings.map(m => m.date).sort()[0] || "";
+    // Topics without dates yet count as the newest, so they show at the top.
+    const firstDate = t => t.meetings.map(m => m.date).sort()[0] || "9999";
 
     fetch("meetings.json")
       .then(r => r.json())
