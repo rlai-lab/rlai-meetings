@@ -5,11 +5,17 @@
     "meetings": [
       {
         "date": "2026-11-13",
-        "speakers": []
+        "speakers": [
+          { "name": "Siddarth Chandrasekar", "talk": "", "website": "https://sites.google.com/view/siddarth?pli=1&authuser=0", "slides": "", "notes": "" },
+          { "name": "Anastasiia Pedan", "talk": "", "website": "", "slides": "", "notes": "" },
+          { "name": "Erik Lintunen", "talk": "", "website": "", "slides": "", "notes": "" }
+        ]
       },
       {
         "date": "2026-11-27",
-        "speakers": []
+        "speakers": [
+          { "name": "Rich Sutton", "talk": "", "website": "http://incompleteideas.net", "slides": "", "notes": "" }
+        ]
       }
     ]
   },
