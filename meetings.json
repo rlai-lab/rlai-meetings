@@ -6,15 +6,15 @@
       {
         "date": "2026-11-13",
         "speakers": [
-          { "name": "Siddarth Chandrasekar", "talk": "", "website": "https://sites.google.com/view/siddarth?pli=1&authuser=0", "slides": "", "notes": "" },
-          { "name": "Anastasiia Pedan", "talk": "", "website": "", "slides": "", "notes": "" },
-          { "name": "Erik Lintunen", "talk": "", "website": "", "slides": "", "notes": "" }
+          { "name": "Anastasiia Pedan", "talk": "", "website": "https://anastasiiapedan.github.io/", "slides": "", "notes": "" },
+          { "name": "Siddarth Chandrasekar", "talk": "", "website": "https://sites.google.com/view/siddarth?pli=1&authuser=0", "slides": "", "notes": "" }
         ]
       },
       {
         "date": "2026-11-27",
         "speakers": [
-          { "name": "Rich Sutton", "talk": "", "website": "http://incompleteideas.net", "slides": "", "notes": "" }
+          { "name": "Rich Sutton", "talk": "", "website": "http://incompleteideas.net", "slides": "", "notes": "" },
+          { "name": "Erik Lintunen", "talk": "", "website": "https://lintue.github.io/", "slides": "", "notes": "" }
         ]
       }
     ]
