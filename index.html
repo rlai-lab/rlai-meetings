@@ -14,9 +14,14 @@
       line-height: 1.5;
       color: #222;
       background: #fff;
+      /* keeps the footer at the bottom of the window when the page is short */
+      min-height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
     }
     header { display: flex; align-items: center; gap: 12px; }
     header img { width: 44px; height: 44px; border-radius: 6px; }
+    #topics { margin-bottom: 20px; }
     .topic { border-top: 1px solid #ddd; padding: 20px 0; }
     .topic h2 { font-size: 1.25em; margin: 0; }
     summary { cursor: pointer; color: #444; margin-top: 6px; }
@@ -45,6 +50,14 @@
       border-radius: 10px;
       color: #444;
     }
+    footer {
+      border-top: 1px solid #ddd;
+      margin-top: auto;
+      padding-top: 16px;
+      color: #666;
+      font-size: 0.85em;
+    }
+    footer p { margin: 0 0 4px; }
   </style>
 </head>
 <body>
@@ -54,6 +67,17 @@
   </header>
 
   <div id="topics"></div>
+
+  <footer>
+    <p>
+      Organized by
+      <a href="https://mahvash-siavashpour.github.io">Mahvash Siavashpour</a>,
+      <a href="https://dikshuy.github.io">Dikshant Shehmar</a>,
+      <a href="https://hejm37.github.io">Jiamin He</a>, and
+      <a href="https://svmgrg.github.io">Shivam Garg</a>.
+    </p>
+    <p>If you have any questions or notice any issues with the website, please contact <a href="mailto:ddikshan@ualberta.ca">Dikshant</a>.</p>
+  </footer>
 
   <script>
     const list = document.getElementById("topics");
