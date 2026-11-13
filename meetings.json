@@ -6,8 +6,8 @@
       {
         "date": "2026-11-13",
         "speakers": [
-          { "name": "Anastasiia Pedan", "talk": "Goal-Space Planning with Subgoal Models - Learning to plan using suboptimal options", "website": "https://anastasiiapedan.github.io/", "slides": "", "notes": "" },
-          { "name": "Siddarth Chandrasekar", "talk": "Option Keyboard - Learning to combine and compose options", "website": "https://sites.google.com/view/siddarth?pli=1&authuser=0", "slides": "", "notes": "" }
+          { "name": "Siddarth Chandrasekar", "talk": "Option Keyboard - Learning to combine and compose options", "website": "https://sites.google.com/view/siddarth?pli=1&authuser=0", "slides": "slides/siddarth.pdf", "notes": "" },
+          { "name": "Anastasiia Pedan", "talk": "Goal-Space Planning with Subgoal Models - Learning to plan using suboptimal options", "website": "https://anastasiiapedan.github.io/", "slides": "slides/anastasiia.pdf", "notes": "" }
         ]
       },
       {
